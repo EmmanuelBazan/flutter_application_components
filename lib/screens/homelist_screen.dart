@@ -18,7 +18,7 @@ class HomeListScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Home List'),
           systemOverlayStyle: SystemUiOverlayStyle.light,
-          backgroundColor: Colors.indigo,
+          // backgroundColor: Colors.indigo,
         ),
         body: ListView.separated(
           itemCount: gamesList.length,

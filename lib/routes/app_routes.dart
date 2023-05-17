@@ -10,22 +10,22 @@ class AppRoutes {
         route: 'HomeScreen',
         name: 'Home screen',
         screen: const HomeScreen(),
-        icon: const Icon(Icons.home)),
+        icon: Icons.home),
     MenuOption(
         route: 'HomeListScreen',
         name: 'List screen',
         screen: const HomeListScreen(),
-        icon: const Icon(Icons.list)),
+        icon: Icons.list),
     MenuOption(
         route: 'AlertScreen',
         name: 'Alert screen',
         screen: const AlertScreen(),
-        icon: const Icon(Icons.add_alert)),
+        icon: Icons.add_alert),
     MenuOption(
         route: 'CardScreen',
         name: 'Card screen',
         screen: const CardScreen(),
-        icon: const Icon(Icons.calendar_view_month)),
+        icon: Icons.calendar_view_month),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
