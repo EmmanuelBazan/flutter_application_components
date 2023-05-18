@@ -26,6 +26,11 @@ class AppRoutes {
         name: 'Card screen',
         screen: const CardScreen(),
         icon: Icons.calendar_view_month),
+    MenuOption(
+        route: 'AvatarScreen',
+        name: 'Avatars',
+        screen: const AvatarScreen(),
+        icon: Icons.mood_rounded),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
