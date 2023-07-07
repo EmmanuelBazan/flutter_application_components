@@ -1,3 +1,5 @@
+export 'package:flutter_application_components/screens/slider_screen.dart';
+
 export 'package:flutter_application_components/screens/input_screen.dart';
 
 export 'package:flutter_application_components/screens/animated_screen.dart';
