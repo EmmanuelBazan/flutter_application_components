@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_components/models/models.dart';
+import 'package:flutter_application_components/screens/listview_builder_screen.dart';
 import 'package:flutter_application_components/screens/screens.dart';
 
 class AppRoutes {
@@ -46,6 +47,11 @@ class AppRoutes {
         name: 'Sliders and checks',
         screen: const SliderScreen(),
         icon: Icons.compare_arrows_rounded),
+    MenuOption(
+        route: 'ListViewBuilderScreen',
+        name: 'Infinit Scroll',
+        screen: const ListViewBuilderScreen(),
+        icon: Icons.swap_vert_circle_outlined),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
