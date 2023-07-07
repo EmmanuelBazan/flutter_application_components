@@ -54,6 +54,14 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         curve: Curves.fastOutSlowIn);
   }
 
+  Future<void> onRefresh() async {
+    await Future.delayed(const Duration(seconds: 2));
+    final lastId = imagesId.last;
+    imagesId.clear();
+    imagesId.add(lastId + 1);
+    add5();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -65,19 +73,23 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
           removeBottom: true,
           child: Stack(
             children: [
-              ListView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: imagesId.length,
-                  controller: scrollController,
-                  itemBuilder: (BuildContext context, int index) {
-                    return FadeInImage(
-                        width: double.infinity,
-                        height: 300,
-                        fit: BoxFit.cover,
-                        placeholder: const AssetImage('assets/loading_gif.gif'),
-                        image: NetworkImage(
-                            'https://picsum.photos/500/300?image=${imagesId[index]}'));
-                  }),
+              RefreshIndicator(
+                onRefresh: onRefresh,
+                child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: imagesId.length,
+                    controller: scrollController,
+                    itemBuilder: (BuildContext context, int index) {
+                      return FadeInImage(
+                          width: double.infinity,
+                          height: 300,
+                          fit: BoxFit.cover,
+                          placeholder:
+                              const AssetImage('assets/loading_gif.gif'),
+                          image: NetworkImage(
+                              'https://picsum.photos/500/300?image=${imagesId[index]}'));
+                    }),
+              ),
               if (isLoading)
                 Positioned(
                     bottom: 40,
